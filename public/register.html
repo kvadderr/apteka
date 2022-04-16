@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>ИС Аптека</title>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/js/uikit-icons.min.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    </head>
+
+    <body class="uk-background-muted uk-padding">
+
+        <div class="uk-section">
+            <div class="uk-container uk-container-small uk-card-default uk-card-body">
+                <div class="uk-padding uk-section uk-section-default">
+                    <div class="uk-container">
+                        <div class="uk-child-width-1-2" uk-grid>
+                            
+                            <div>
+                                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_jcikwtux.json"  background="transparent"  speed="1"  style="width: 400px; height: 350px;"  loop  autoplay></lottie-player>
+                            </div>
+
+
+                            <div>
+                                <div class="">
+                                    <ul class="uk-breadcrumb">
+                                        <li><a href="index.html">Главная</a></li>
+                                        <li><span>Регистрация</span></li>
+                                    </ul>
+                                   
+                                    <form class="uk-form-stacked">
+
+                                        <h3 class="uk-text-bold">Введите данные</h3>
+
+                                        <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-stacked-text">Название аптеки</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input" id="PharmName" type="text" placeholder="Название...">
+                                            </div>
+                                        </div>
+
+                                        <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-stacked-text">Телефон</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input"   id="PharmPhone" type="text" placeholder="Номер телефона...">
+                                            </div>
+                                        </div>
+
+                                        <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-stacked-text">Адрес</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input" id="PharmAdress" type="text" placeholder="Адрес...">
+                                            </div>
+                                        </div>
+
+                                        <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-stacked-text">Логин</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input" id="PharmLogin" type="text" placeholder="Логин">
+                                            </div>
+                                        </div>
+
+                                        <div class="uk-margin">
+                                            <label class="uk-form-label" for="form-stacked-text">Пароль</label>
+                                            <div class="uk-form-controls">
+                                                <input class="uk-input" id="PharmPassword" type="password" placeholder="Пароль">
+                                            </div>
+                                        </div>     
+                                        
+                                        <a class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" onclick="register()">Регистрация</a>
+                                    
+                                    </form>
+                                
+                                </div>
+                            </div>
+
+                            
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <script>
+                const PharmName = document.getElementById("PharmName");
+                const PharmPhone = document.getElementById("PharmPhone");
+                const PharmAdress = document.getElementById("PharmAdress");
+                const PharmLogin = document.getElementById("PharmLogin");
+                const PharmPassword = document.getElementById("PharmPassword");
+        </script>
+    <script src="./logic.js"></script>
+    </body>
+
+    
+
+</html>

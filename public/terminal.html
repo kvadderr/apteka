@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <title>ИС Аптека</title>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/js/uikit-icons.min.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    </head>
+
+    <body class="uk-background-muted uk-padding">
+
+        <div class="uk-section">
+            <div class="uk-container uk-container-large uk-card-default uk-card-body">
+                <div class="uk-padding uk-section uk-section-default">
+                    <div class="">
+                        
+                    </div>
+                </div>
+
+                <div class="uk-padding uk-section uk-section-default">
+                    <div class="uk-container">
+                        <h3 class="uk-text-bold" id="farmName">Аптека «Роман»</h3>
+                      
+                        <div class="uk-margin">
+                            <input onkeyup="search()" class="uk-input" type="text" id="myInput" placeholder="Введите название лекарства">
+                        </div>
+                        
+                        <h3 class="uk-text-bold">Фильтр по категориям</h3>    
+                        <div id="categoryFilter" class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+
+                        </div>
+                        <a class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" onclick="filterCheckbox()">Применить</a>
+                    </div>
+                </div>        
+
+                <div class="uk-padding uk-section uk-section-default">
+                    <div class="uk-container">
+                        <h3 class="uk-text-bold">Список лекарств</h3>    
+                        <table class="uk-table uk-table-striped" id="myTable">
+                            <thead>
+                                <tr>
+                                    <th>Название лекарства</th>
+                                    <th>Категория</th>
+                                    <th>Стоимость</th>
+                                    <th>Количество</th>
+                                </tr>
+                            </thead>
+                            <tbody id="stockTableBody">
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+          
+
+              
+                
+
+            </div>
+            
+        </div>
+        <script>
+            const categoryFilter = document.getElementById("categoryFilter");
+            const stockTableBody = document.getElementById("stockTableBody");
+            const pharmName = document.getElementById("farmName");
+        </script>
+        <script src="./logic.js"></script>
+        <script>
+            getCategoryFilter();        
+            loadPharmName();
+        </script>
+    </body>
+
+
+</html>

@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>ИС Аптека</title>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/js/uikit-icons.min.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    </head>
+
+    <body class="uk-background-muted uk-padding">
+
+        <div class="uk-section">
+            <div class="uk-container uk-container-small uk-card-default uk-card-body">
+                <div class="uk-padding uk-section uk-section-default">
+                    <div class="uk-container">
+                        <div class="uk-child-width-1-2" uk-grid>
+                            <div>
+                                <h3 class="uk-text-bold">Медицинская информационная система  «Аптека»</h3>
+                                <div class="">
+                                    <ul class="uk-list uk-list-bullet">
+                                        <li>Складской учет лекарственных средств</li>
+                                        <li>Поддержка генерации отчетов</li>
+                                        <li>Информационное табло для покупателей</li>
+                                        <li>Передача данных в режиме реального времени</li>
+                                    </ul>
+                                    <a class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" href="register.html">Подать заявку на регистрацию</a>
+                                </div>
+                            </div>
+
+                            <div>
+                                <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_jcsfwbvi.json"  background="transparent"  speed="1"  style="width: 350px; height: 300px;"  loop  autoplay></lottie-player>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>        
+
+                <div class="uk-padding uk-section uk-section-default">
+                    <div class="uk-container">
+                        <div class="uk-placeholder uk-text-center">Что дает система?</div>
+                        <div class="uk-child-width-1-2@m uk-grid-match" uk-grid uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 500; repeat: true">
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <p><b>Автоматизации складского учета </b>движения лекарственных средств</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <p><b>Снижение</b> затрат на оформление документации и необходимой отчетности.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <p><b>Прозрачность </b>поступления и расхода лекарственных средств медицинской организацией</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <p><b>Оперативное получение</b> информации о наличии лекарственных средств в любой момент времени на всех местах хранения</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+
+                <div class="uk-padding uk-section uk-section-default">
+                    <div class="uk-container">
+                        <div class="uk-child-width-1-2" uk-grid>
+
+                            <div>
+                                <lottie-player src="https://assets9.lottiefiles.com/private_files/lf30_ul3enyal.json"  background="transparent"  speed="1"  style="width: 350px; height: 300px;"  loop  autoplay></lottie-player>
+                            </div>
+
+                            <div>
+                                <form>
+                                    <fieldset class="uk-fieldset">
+
+                                        <legend class="uk-legend">Уже имеется профиль?</legend>
+                                                                
+                                        <div class="uk-margin">
+                                            <input class="uk-input" type="text" placeholder="Логин" id="loginInput">
+                                        </div>
+                                
+                                        <div class="uk-margin">
+                                            <input class="uk-input" type="password" placeholder="Пароль" id="passwordInput">
+                                        </div>
+
+                                        <a class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom" onclick="login()">Войти</a>
+                                
+                                
+                                    </fieldset>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>        
+                
+
+            </div>
+            
+        </div>
+    <script src="./logic.js"></script>
+    </body>
+
+
+</html>

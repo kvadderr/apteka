@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <title>ИС Аптека</title>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.1/dist/js/uikit-icons.min.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    </head>
+
+    <body class="uk-background-muted uk-padding">
+
+        <div class="uk-section">
+            <div class="uk-container uk-container-small uk-card-default uk-card-body">
+                <div class="uk-padding uk-section uk-section-default">
+                    <div class="uk-container">
+                        <div class="uk-child-width-1-2" uk-grid>
+                            
+                            <div>
+                                <div class="">
+                                    <ul class="uk-breadcrumb">
+                                        <li><a href="index.html">Главная</a></li>
+                                        <li><span>Личный кабинет</span></li>
+                                    </ul>
+                                    <h3 class="uk-text-bold" id="pharmName">Аптека «Роман»</h3>
+                                    <ul class="uk-list uk-list-bullet">
+                                        <li id="pharmPhone">Номер телефона: +7708266721</li>
+                                        <li id="pharmAdress">Просмотрите список заявок</li>
+                                        <li id="pharmWindow">Удобный инструмент фильтрации данных</li>
+                                    </ul>
+                                
+                                </div>
+                            </div>
+
+                            <div>
+                                <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_nw19osms.json"  background="transparent"  speed="1"  style="width: 350px; height: 300px;"  loop  autoplay></lottie-player>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-padding uk-section uk-section-default">
+                    <div class="uk-container">
+                        <ul class="uk-tab-bottom" uk-tab data-uk-tab="{connect:'#my-id2'}">
+                            <li class="uk-active"><a href="#">Остатки лекарственных препаратов</a></li>
+                            <li><a href="#">Приход</a></li>
+                            <li><a href="#">Отчеты</a></li>
+                        </ul>
+
+                        <ul class="uk-switcher uk-margin" id="my-id2">
+                            <li>
+                                <div class="uk-container">
+                                    <div class="uk-margin">
+                                        <input onkeyup="search()" class="uk-input" type="text" id="myInput" placeholder="Введите название лекарства">
+                                    </div>
+                                    <table class="uk-table uk-table-striped" id="myTable">
+                                        <thead>
+                                            <tr>
+                                                <th>Название лекарства</th>
+                                                <th>Количество</th>
+                                                <th>Цена за 1 </th>
+                                                <th>Оформить уход</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="stockTableBody">
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </li>
+                            
+                            <li>
+                                <div class="uk-container">
+                                    <div class="uk-margin">
+                                        <select class='uk-select' id = 'medecineSelect'>
+                                        </select>
+                                    </div>
+
+                                    <div class="uk-margin">
+                                        <select class='uk-select' id = 'formSelect'>
+                                        </select>
+                                    </div>
+
+                                    <div class="uk-margin">
+                                        <select class='uk-select' id = 'parametrSelect'>
+                                        </select>
+                                    </div>
+
+                                    <div class="uk-margin">
+                                        <input class="uk-input" id="count" type="text" placeholder="Количество">
+                                    </div>
+
+                                    <a class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" onclick="addToStock()">Оформить приход</a>
+                                                                        
+                                </div>
+                            </li>
+
+
+                            <li>
+                                <ul class="uk-list">
+                                    <li><a onclick="exportToExcel()" class="uk-button uk-button-text">Экспортировать данные об остатках в формате эксель</a></li>
+                                    <li><a onclick="exportToExcel()" class="uk-button uk-button-text">Ведомость финансовых движений в формате JSON</a></li>
+                                    <li><a onclick="exportToExcel()" class="uk-button uk-button-text">Ведомость прихода по определенным лекарственным препаратам</a></li>
+                                </ul>
+                          
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div id="modal-close-default" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <div class="uk-grid-small" uk-grid>
+                    <div class="uk-width-expand" uk-leader>Название</div>
+                    <div id="careName">$20.90</div>
+                </div>
+                <div class="uk-grid-small" uk-grid>
+                    <div class="uk-width-expand" uk-leader>Форма</div>
+                    <div id="careForm">$20.90</div>
+                </div>
+                <div class="uk-grid-small" uk-grid>
+                    <div class="uk-width-expand" uk-leader>Параметры</div>
+                    <div id="careParametr">$20.90</div>
+                </div>
+                <div class="uk-margin">
+                    <input class="uk-input" id="careCount" type="text" placeholder="Количество">
+                </div>
+                <div class="uk-grid-small" uk-grid>
+                    <div class="uk-width-expand" uk-leader>Итоговая цена</div>
+                    <div id="carePrice">0</div>
+                </div>
+                <div class="uk-margin">
+                    <a class="uk-button uk-button-secondary uk-width-1-1 uk-margin-small-bottom" onclick="deleteFromStock()">Оформить уход</a>
+                </div>
+
+            </div>
+        </div>
+
+    <script>
+        //Поиск элементов
+        const careName = document.getElementById("careName");
+        const careForm = document.getElementById("careForm");
+        const careParametr = document.getElementById("careParametr");
+        const careCount = document.getElementById("careCount");
+        const carePrice = document.getElementById("carePrice");
+
+        const PharmName = document.getElementById("pharmName");
+        const PharmPhone = document.getElementById("pharmPhone");
+        const PharmAdress = document.getElementById("pharmAdress");
+        const PharmWindow = document.getElementById("pharmWindow");
+        const stockTableBody = document.getElementById("stockTableBody");
+
+        const medecineSelect = document.getElementById("medecineSelect");
+        const formSelect = document.getElementById("formSelect");
+        const parametrSelect = document.getElementById("parametrSelect");
+        const count = document.getElementById("count");
+
+    </script>
+    <script src="./logic.js"></script>
+    <script>
+        loadDataPharm();
+    </script>
+    </body>
+
+</html>
